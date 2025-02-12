@@ -1,0 +1,13 @@
+class LargerSmall 
+{
+	public static void main(String[] args) 
+	{
+		 int num = 34;
+		 int num2 =89;
+		
+		int Larger = (num>num2)?(num):(num2);
+		
+		
+		System.out.println(Larger);
+	}
+}

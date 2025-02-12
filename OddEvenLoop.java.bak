@@ -1,0 +1,22 @@
+class OddEvenLoop 
+{
+	public static void main(String[] args) 
+	{
+		
+		for(int i=1;i <= 100;i++){
+			
+		if(i%2 == 0){
+			System.out.println("The Number is Even :- " + i);
+		}
+		
+	}
+	System.out.println();
+	for(int i=100;i >= 1;i--){
+			
+		if(i%2 != 0){
+			System.out.println("The Number is Odd :- " + i);
+		}
+		
+	}
+}
+}

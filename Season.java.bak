@@ -1,0 +1,12 @@
+import java.util.Scanner;
+class Season 
+{
+	public static void main(String[] args) 
+	{   
+		System.out.println("Enter the MOnth");
+		String Month = new Scanner(System.in).nextLine();
+		
+		String Season = (Month == "mar" || Month == "feb" || Month == "apr" || Month == "may")?("It is Summer seson"):((Month == "oct" || Month == "nov" || Month == "dec" || Month == "jan")?("It is Winter seson"):( (Month == "jun" || Month == "july" || Month == "aug" || Month == "sep") ?("It is Monson"):( "You have enterd a wrong value")));
+		//System.out.println("Hello World!");
+	}
+}

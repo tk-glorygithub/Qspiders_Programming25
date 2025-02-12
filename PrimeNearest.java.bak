@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class  PrimeNearest
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println(" Enter the Number " );
+		int num = sc.nextInt();
+		int value= 0 ;
+		int i ;
+		for( i = 2; i<= num ;i++){
+			
+		if(num %i ==0){
+			
+			break ;
+		}
+		num ++;
+		
+		if (value  == num)
+		{
+			System.out.println("num is prime");
+		}
+        System.out.println(" Num is not prime "  );
+	}  }
+}
