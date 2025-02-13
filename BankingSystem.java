@@ -23,7 +23,7 @@ class BankingSystem
 		System.out.println("Enter an Option");
 		int opt = sc.nextInt();
 		if(username1 ==nul){
-			System.out.println("CREATE YOUR ACCOUNT);
+			System.out.println("CREATE YOUR ACCOUNT");
 		    continue;
 		
 		}
@@ -119,4 +119,5 @@ class BankingSystem
 			
 			}
 	}
+}
 }

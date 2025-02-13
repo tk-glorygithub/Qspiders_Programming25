@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+class PrimeNumSum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number:");
+        int num = sc.nextInt();
+        sc.close();
+        
+        // Step 1: Check if num is prime
+        boolean isPrime = true;
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (!isPrime) {
+            System.out.println(num + " is not a prime number.");
+            return;
+        }
+
+        // Step 2: Find prime sum representation
+        int sum = 0;
+        int prime = 2;
+        boolean first = true;  // To handle "+" sign correctly
+
+        System.out.print(num + " can be written as: ");
+        
+        while (sum < num) {
+            // Check if prime number can be added
+            boolean isPrimeCheck = true;
+            for (int j = 2; j * j <= prime; j++) {
+                if (prime % j == 0) {
+                    isPrimeCheck = false;
+                    break;
+                }
+            }
+
+            if (isPrimeCheck && sum + prime <= num) {
+                if (!first) {
+                    System.out.print(" + "); // Only add "+" between numbers
+                }
+                System.out.print(prime);
+                sum += prime;
+                first = false;
+            } else {
+                prime++; // Move to the next number
+            }
+        }
+        System.out.println(); // Print a new line at the end
+    }
+}

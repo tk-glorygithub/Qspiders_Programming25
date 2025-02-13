@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+class GoodPrimeRange 
+{
+	public static void main(String[] args) 
+	{
+		
+		System.out.println(" Enter the Range1 ");
+		int Range1 = new Scanner(System.in).nextInt();
+		System.out.println(" Enter the Range2 ");
+
+		int Range2 = new Scanner(System.in).nextInt();
+		System.out.println();
+		
+		int num ;
+		
+		for(int  i = Range1; i<=Range2 ;i++){
+			boolean flag = true;
+		 for(int j =2 ; j*j <= i ;j++){
+			 if(i%j == 0){
+				 flag = false;
+				 break;
+				 
+			 } 
+		 }
+		 if(flag){
+			 
+			  num = i;
+		System.out.print(num + " ");
+		
+		
+		boolean Goodprime = true;
+		int rem = num %10;
+		for(int j =2 ; j< rem ;j++){
+			 if(rem%j == 0){
+				 Goodprime= false;
+				 break;
+				 
+			 } 
+		 }
+		 num /=10;
+		 
+		 if(Goodprime){
+		 System.out.println(rem); 
+		 }
+		 
+		}
+		
+	}
+}
+}

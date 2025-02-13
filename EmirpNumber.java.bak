@@ -20,7 +20,7 @@ class EmirpNumber
 			
 		}
 		if(flag){
-			System.out.println("The num is prime" + num);
+			System.out.println("The num is prime " + num);
 		//break;
 		} else {
 		System.out.println("the num is not prime");

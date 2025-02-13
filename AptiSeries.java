@@ -1,0 +1,23 @@
+class  AptiSeries
+{
+	public static void main(String[] args) 
+	{
+		
+		// 2  6  22 278 65814
+		
+		int num = 2;
+		System.out.print(num + " ");
+		for(int i= 2,  p = 2 ;i <=5 ;i++ , p*=2){
+		int pow = 1;
+		for(int j = 1;j<= p;j++)
+	    pow *= 2;
+			System.out.print(pow + num + " " );
+		   num +=pow;
+		   
+			
+		}
+		
+	
+	}
+}
+

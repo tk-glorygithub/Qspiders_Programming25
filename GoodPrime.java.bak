@@ -1,0 +1,54 @@
+import java.util.Scanner;
+class GoodPrime 
+{  
+	
+	
+	public static void main(String[] args) 
+	{
+		
+		System.out.println("Enter a  Number");
+	     int num = new Scanner(System.in).nextInt();
+		 int dup = num;
+		boolean flag = true;
+		//int rev = 0;
+		for(int i = 2;i<num ;i++){
+		if(num % i == 0){
+			flag = false;
+			break;
+		}
+			
+		}
+		if(flag){
+			while(num >0){
+				
+				//extrcting the single digit
+				int rem = num %10;
+				// check the digit is prime or not
+				for(int i = 2;i<rem ;i++){
+		   if(rem % i == 0){
+			flag = false;
+			break;
+		}
+			continue;
+		}
+		
+		num /=10;
+		
+		if(flag){
+			System.out.println(rem + " The digit is prime ");
+		}
+		else {
+			System.out.println( rem +" The digit is not prime");
+		}
+				
+				
+				
+				
+			}
+		System.out.println("num is prime " + dup);
+		}
+		else {
+		System.out.println(" not prime");	
+		}
+	}
+}

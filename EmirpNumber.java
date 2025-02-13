@@ -53,7 +53,6 @@ class EmirpNumber
 		}
 		else{
 			
-			//System.out.println("The num is  prime" + num);
 			System.out.println("The RevNum is not Emirp  " +		RevNum);
 		}
 		

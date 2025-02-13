@@ -8,7 +8,7 @@ class AtoZ_AA_AB
 		System.out.println("Enter the Letter");
 		String Letter =sc.next().toUpperCase();
 		
-		System.out.println("  Letter is " + Letter);
+		//System.out.println("  Letter is " + Letter);
 		
 		int value = 0;
 		
@@ -17,6 +17,6 @@ class AtoZ_AA_AB
 			value = value * 26 +(ch - 'A' +1);
 		
 		}
-		System.out.print( "Numeric value : " + value);	
+		System.out.print( "Numeric value of  " + Letter + " is "  + value);	
 	}
 }
