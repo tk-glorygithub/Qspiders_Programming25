@@ -1,5 +1,6 @@
 import java.util.Scanner;
-class  KrishFactorial  //num = 145
+class  KrishFactorial  //num = 145 - krishnaMurthy number
+// in this the num is give and the sum of  factorial of digit is equals to te given digit
 {
 	public static void main(String[] args) 
 	{
