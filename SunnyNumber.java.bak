@@ -1,0 +1,26 @@
+import java.util.Scanner;
+class  SunnyNumber
+{
+	public static void main(String[] args) 
+	{
+		 System.out.print("Enter a number: ");
+		int num = new Scanner(System.in).nextInt();
+		
+		int PerfectSquare = num+1;
+		 boolean isPerfect = false; 
+		 
+		for(int i =2; (i*i) <= PerfectSquare;i++){
+			
+			if((i*i)==PerfectSquare ){
+				isPerfect= true;
+				break;
+			}
+	}
+		if(isPerfect ){
+			System.out.println("perfect Square");
+		}
+		else {
+		System.out.println("Not Perfect Square");
+	}
+	}
+}
