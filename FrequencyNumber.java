@@ -6,6 +6,7 @@ class FrequencyNumber
 		
 		int HigherFreq = 0 ,SmallerFreq = Integer.MAX_VALUE;
 		int higherDigit = -1 ,smallerDigit = -1;
+		
 		System.out.println(num);
 		for(int i =0;i<=9;i++){
 		 int cnt = 0;

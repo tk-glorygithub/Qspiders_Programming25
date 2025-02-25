@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class BouncyNumber 
-{
+{    //129
 	public static void main(String[] args) 
 	{
 		  System.out.print("Enter a number: ");
@@ -28,7 +28,7 @@ class BouncyNumber
 		// check if num is bouncy or not
 		
 		if( increasing  && decreasing){
-			System.out.println(dup + "is  Bouncy Number");
+			System.out.println(dup + " is  Bouncy Number");
 		}
 			else{
 				System.out.println(dup + " is not bouncy Number");

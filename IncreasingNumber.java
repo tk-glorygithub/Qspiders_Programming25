@@ -3,6 +3,7 @@ class IncreasingNumber
 {
 	public static void main(String[] args) 
 	{
+		
 		System.out.print("Enter the Number :- ");
 		int num = new Scanner(System.in).nextInt();
 		boolean increasing = true;
@@ -14,7 +15,7 @@ class IncreasingNumber
 			int currDigit = num%10;
 			if( currDigit >= prev){
 				increasing = false;
-				break;
+				break; 
 			}
 			prev = currDigit;
 			num /=10;

@@ -5,16 +5,18 @@ class IncreasingNumber
 	{
 		System.out.print("Enter the Number :- ");
 		int num = new Scanner(System.in).nextInt();
-		boolean increasing = false, decreasing = false;
+		boolean increasing = true;
 		int dup = num;
 		int prev = num%10;
 			num /= 10;
 		while (num>0)
 		{   
 			int currDigit = num%10;
-			if( currDigit < prev){
-				increasing = true;
+			if( currDigit >= prev){
+				increasing = false;
+				break;
 			}
+			prev = currDigit;
 			num /=10;
 		}
 		

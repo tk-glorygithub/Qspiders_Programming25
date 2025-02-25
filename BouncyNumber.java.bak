@@ -28,10 +28,10 @@ class BouncyNumber
 		// check if num is bouncy or not
 		
 		if( increasing  && decreasing){
-			System.out.println(num + "is  Bouncy Number");
+			System.out.println(dup + " is  Bouncy Number");
 		}
 			else{
-				System.out.println(num + " is not bouncy Number");
+				System.out.println(dup + " is not bouncy Number");
 				
 			}
 			

@@ -11,5 +11,6 @@ class BinaryNum
 			bin =(i%2)+bin;
 		}
 		System.out.println( num + " :" +bin);
+		System.out.println(Integer.toBinaryString(num));
 	}
 }

@@ -1,8 +1,6 @@
 import java.util.Scanner;
 class GoodPrime 
-{  
-	
-	
+{ 
 	public static void main(String[] args) 
 	{
 		
@@ -10,14 +8,11 @@ class GoodPrime
 	     int num = new Scanner(System.in).nextInt();
 		 int dup = num;
 		boolean flag = true;
-		
-		
 		for(int i = 2;i<num ;i++){
 		if(num % i == 0){
 			flag = false;
 			break;
-		}
-			
+		}		
 		}
 		if(!flag){
 			   System.out.println(dup + " is NOT a Good Prime (because it's not a prime number).");
@@ -25,8 +20,7 @@ class GoodPrime
 		}
 		
 		   boolean areAllDigitsPrime = true;
-			while(num >0){
-				
+			while(num >0){	
 				//extrcting the single digit
 				int rem = num %10;
 				// check the digit is prime or not
@@ -40,7 +34,6 @@ class GoodPrime
 			 isDigitPrime = false;
 			break;
 		}
-		
 		}
 				}
 				
@@ -49,21 +42,13 @@ class GoodPrime
 		}
 		 System.out.println(rem + " is " + (isDigitPrime ? "a prime digit." : "NOT a prime digit."));
 		
-		num /=10;
-		
-		
-				
-				
-				
-				
+		num /=10;	
 			}
 			  // Final Good Prime check
         if (areAllDigitsPrime) {
             System.out.println(dup + " is a GOOD PRIME!");
         } else {
             System.out.println(dup + " is NOT a Good Prime (because not all digits are prime).");
-			
-	
 		}
 		
 	}

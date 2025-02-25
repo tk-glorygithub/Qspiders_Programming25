@@ -9,8 +9,11 @@ class BinaryNum
 		String bin ="";
 		for(int i =num;i>0;i/=2){
 			bin =(i%2)+bin;
+			
 		}
 		System.out.println( num + " :" +bin);
-		System.out.println(Integer.toBinaryString(num));
+		
+		// Conversion of Binary using  Built in library 
+		System.out.println(Integer.toBinaryString(num)); // 12 - 1100
 	}
 }
