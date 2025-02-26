@@ -1,8 +1,10 @@
 import java.util.Scanner;
 class Blank{
-	//code for checking Good Prime
+	 
 	public static void main(String[] args) 
 	{ 
+		/*//code for checking Good Prime
+		
 		System.out.print("Enter Range 1 - ");
 		int R1 = new Scanner(System.in).nextInt();
 		System.out.print("Enter Range 2 - ");
@@ -55,6 +57,19 @@ class Blank{
 			}
 			}
 		}
+		
+		*/
+		
+		
+		// code for Leetcode
+		int num = 38;
+		 int sum =0;
+		for(int i = num ;i>0;i/=10){
+			 int rem = i%10;
+			 sum = sum+ rem;
+			 
+		}
+		System.out.println(sum);
 		
 	}
 }

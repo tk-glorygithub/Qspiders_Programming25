@@ -4,14 +4,14 @@ class BouncyNumber
 {    //129
 	public static void main(String[] args) 
 	{
-		  System.out.print("Enter a number: ");
-	   int num = new Scanner(System.in).nextInt();
-	  boolean  increasing = false, decreasing = false;
-	  int dup = num;
+		System.out.print("Enter a number: ");
+	    int num = new Scanner(System.in).nextInt();
+	    boolean  increasing = false, decreasing = false;
+	    int dup = num;
 	  
-	   if(num>100){
-		   int prevDigit = num%10;
-	     num /=10; 
+		   if(num>100){
+			   int prevDigit = num%10;
+			 num /=10; 
 		 
 		while(num>0){
 		int currDigit = num%10;
@@ -34,11 +34,7 @@ class BouncyNumber
 				System.out.println(dup + " is not bouncy Number");
 				
 			}
-			
-		
-		
 		  
-		   
 		   
 	   }
 	   else{

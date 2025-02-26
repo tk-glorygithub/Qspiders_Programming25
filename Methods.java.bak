@@ -28,7 +28,7 @@ class Methods
 			System.out.println( n + " is  Prime Number");	
 			}
 			else {
-				System.out.println( n + " is not prime Number")
+				System.out.println( n + " is not prime Number");
 			}
 	}
 }
