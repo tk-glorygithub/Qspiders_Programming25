@@ -168,7 +168,7 @@ public static void order(Scanner sc)
 	System.out.println("    ORDERS ");
 	System.out.println();
 	if(basket.size()==0){
-	System.out.println(" BASKET IS EMPTY ADD FOOD ITEMS");	
+	System.out.println(" BASKET IS EMPTY AND FOOD ITEMS");	
 		
 	}
 	for(String foodItem : basket)
