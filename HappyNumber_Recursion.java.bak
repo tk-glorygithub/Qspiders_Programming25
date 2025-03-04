@@ -1,0 +1,29 @@
+class HappyNumber_Recursion 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println(isHappy(10));
+	}
+	public static boolean isHappy(int num){
+		int sum =SumOfSqDigits( num );
+		
+		while(sum !=4 && sum!=1){
+			sum =SumOfSqDigits( sum );
+		}
+		return (sum ==1)?( true):( false);
+		
+	}
+	
+	public static int SumOfSqDigits(int num ){
+		
+		int sum = 0;
+		while(num!=0){
+		int last = num%10;
+		sum += last*last;
+			num/=10;
+			
+		}
+		return sum;
+		
+	}
+}

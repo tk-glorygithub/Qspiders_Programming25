@@ -1,55 +1,74 @@
 class Method_RotateNum
 {
 	public static void main(String[] args) 
-	{ /*
-		// for rotating the Single number 
-		System.out.println( Reverse(1234));
-		*/
-		//for(int ip =100;ip<1000;ip++){
+	{ 
+		// for the one number its  gives op as :- 7161 1716 6171 1617
+	
+		/* 
 		int ip =1617;
-		int Rotate = Reverse(ip);
-		while(Rotate!= ip)
+		int rot = rotate(ip);
+		while(rot!= ip)
 		{
-		System.out.print( Rotate + " " );
-		 Rotate= Reverse(Rotate);
+		System.out.print( rot + " " );
+		 rot = rotate(rot);
 			
 		}
-		System.out.println(Rotate);
-	//}
-	//System.out.println();
+		System.out.println(rot);
+	   */
+	   
+	   // for finding the range of given number
+	   for(int i = 1;i<=1000;i++){
+		   if(isRotating(i)){
+			  System.out.print(i + "  "); 
+		   }
+		   
+	   }
 	}
 	
 	// check the Rotated number is Prime or not,if its prime then print
-	public static boolean isPrime(int num)
-	{ 
-		boolean flag = true;
-		for(int i =2;i*i<num ;i++){
-		
-			if(num%2 ==0){
-				flag = false;
-				break;
+	public static boolean isRotating (int num)
+	{
+	
+		if(isPrime(num))
+		{
+		int rot= rotate(num);
+		while(  rot!= num  &&  isPrime(rot))
+			{
+			rot = rotate(rot);
 			}
-		}
-		if(flag){
-		return true;
+		return num == rot;	
 		}
 		return false;
-		
-		
 	}
 	
-	public static int Reverse( int num)
+	// check for prime
+	public static boolean isPrime(int num )
+	{
+	int den = 2;
+	for( ; den<num ;den++)
+	{
+	if(num %den ==0){
+	return false;	
+	}
+		
+	}
+	return true;
+	}
+	
+	// Reverse the Number
+	public static int rotate( int num) //1617
 	{
 		int rem = num%10;
 		int ct =Count(num);
 		num/=10;
-		int RoatatingNum = rem*Power(10,ct-1)+num; // ct error = 40123
-		if(isPrime(RoatatingNum)){
-			return RoatatingNum;
-		}
-		return System.out.println(" not prime");
+		
+			return rem*Power(10,ct-1)+num;
+		
+		
 		
 	}
+	
+	// count the length of the Number
 	public static int Count(int num){
 		int count = 0;
 		for(int i =num ;i>0;i/=10){
