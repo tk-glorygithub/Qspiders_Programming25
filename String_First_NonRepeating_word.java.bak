@@ -1,0 +1,35 @@
+import java.util.Arrays;
+// first non repeating word
+class  String_First_NonRepeating_word
+{
+	public static void main(String[] args) 
+	{
+		
+		String str = "bye go Hello Word Hello Hello java hello word hello Java hi";
+  
+    String []str1 =  str.toLowerCase().split(" ");
+    boolean b[] = new boolean[str.length()];
+   
+ 
+   for(int i = 0;i<str1.length;i++){
+	   int count =0;
+	    if(b[i]) continue;
+	for(int j =i;j<str1.length;j++){
+		if(str1[i].equals(str1[j]))
+		{
+		count++;
+		(b[j])= true ;
+			
+		}
+	}
+	if(count==1){
+		  System.out.println(str1[i]);
+	}
+	  
+	  }
+ 
+   
+   }
+    
+	
+}

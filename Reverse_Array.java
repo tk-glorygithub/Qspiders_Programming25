@@ -1,0 +1,22 @@
+import java.util.Arrays;
+
+
+class Reverse_Array 
+{
+	public static void main(String[] args) 
+	{
+		int arr[] = {1,2,3,4,5};
+		System.out.println(Arrays.toString(arr));
+		int l =0, r= arr.length-1;
+		for(int i=0;i<arr.length/2;i++)
+		{
+			int temp = arr[l];
+			arr[l] = arr[r];
+			arr[r] = temp;
+			l++;
+			r--;
+		}
+		System.out.println(Arrays.toString(arr));
+	}
+}
+

@@ -1,0 +1,22 @@
+import java.util.*;
+
+class ListInterface_M1 
+{
+	public static void main(String[] args) 
+	{
+		List<String> cities = new ArrayList<>();
+		cities.add("mumbai");
+		cities.add("nagpur");
+		cities.add("hyderabad");
+		cities.add("chennai");
+		cities.add("delhi");
+		System.out.println(cities);
+		
+		List<String>Sublist = cities.subList(1,4);
+		System.out.println(Sublist);
+		//System.out.println(cities.subList(1,4));
+		SubList.set(2,"banglore");
+		System.out.println(cities.subList(1,4));
+			System.out.println(cities);
+	}
+}

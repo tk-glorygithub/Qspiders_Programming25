@@ -1,0 +1,280 @@
+import java.util.*;
+
+//exception class
+class MyArrayIndexOutOfBoundException extends RuntimeException
+{
+	public MyArrayIndexOutOfBoundException(String desc)
+	{
+	super(desc);	
+	}
+}
+class MyArrayList<E>
+{
+	E[] arr; //null
+	public  int indx; //0
+	public static final int DEFAULT_CAPACITY =10;
+	
+	public MyArrayList(){
+	this(DEFAULT_CAPACITY);	
+	}
+	
+	//public MyArrayList(){
+	//arr = (E[])new Object[DEFAULT_CAPACITY];	
+	//}
+	
+	public MyArrayList(int capacity){
+	arr = (E[])new Object[capacity];	
+	}
+	
+	public MyArrayList( MyArrayList coll){
+	arr = (E[])new Object[coll.size()];	
+	for(int i =0;i<coll.size();i++)
+		{
+		arr[i] = (E)coll.get(i);
+		}
+	}
+	
+	@Override
+		public String toString(){
+	if(size()==0)
+		return "[]";
+	
+	String data ="[";
+	for(int i =0;i<size()-1;i++){
+		
+	data +=arr[i]+",";	
+	}
+	data+=arr[indx-1]+"]";
+	return data;
+	}
+	//size
+	public int size()
+	{
+	return indx;	
+	}
+	
+	// add boolean
+	public boolean add(E element)
+	{
+	if(arr.length == size()){
+	E[] newArr = (E[])new Object[getCapacity(arr.length)];
+	for(int i =0;i<size();i++)
+		
+		{
+		newArr[i] = arr[i];	
+		}
+		arr = newArr;
+	}
+	arr[indx++] = element;
+	return true;
+	}
+	
+	// add void
+	public void add(int indx, E ele)
+	{
+		{
+	if(indx <0 || indx >=size()){
+	throw new MyArrayIndexOutOfBoundException("Index "+indx+ "out of bounds for length "+size());	
+		
+	}
+		
+	if(arr.length == size()){
+	E[] newArr = (E[])new Object[getCapacity(arr.length)];
+	for(int i =0;i<size();i++)
+		
+		{
+		newArr[i] = arr[i];	
+		}
+		arr = newArr;
+	}
+	arr[indx++] = ele;
+	this.indx++;
+	}
+	}
+	// addAll 
+	public boolean addAll(MyArrayList coll)
+		{
+		boolean flag = false;
+		for(int i =0;i<coll.size();i++)
+			{
+			if(add((E)coll.get(i)))
+				{
+				flag = true;
+				
+				}
+			
+			}
+			return flag;
+		
+		}
+	
+	
+	//get capacity
+	private int getCapacity(int oldCap)
+	{
+	return (int)(oldCap*1.5);	
+	}
+	
+	//empty method
+	public boolean isEmpty()
+	{
+	return (size()!=0)? false:true;	
+	}
+	
+	//remove
+	public boolean remove(int indx)
+	{
+	if(indx <0 || indx >=size()){
+	throw new MyArrayIndexOutOfBoundException("Index "+indx+ "out of bounds for length "+size());	
+		
+	}
+	for(int i = indx;i<size();i++)
+		{
+		arr[i] = arr[i+1];
+		}
+		this.indx--;
+		return true;
+		
+	}
+	
+	// indexOf
+	public int indexOf(E element)
+	{
+	for(int i =0;i<size();i++)
+		{
+		if(arr[i].equals(element))return i;
+		}
+		return -1;
+		
+	}
+	
+	//lastIndexOf
+	public int lastIndexOf(E element)
+	{
+	for(int i =size()-1;i>=0;i--)
+		{
+		if(arr[i].equals(element))return i;
+		
+		}
+		return -1;
+	}
+	
+	//removeAll
+	 public boolean removeAll(MyArrayList coll)
+	{
+	boolean flag = false;
+	for(int i =0;i<coll.size();i++)
+		{
+		int eleIndx = indexOf((E)coll.get(i));
+		if(eleIndx != -1)
+			{
+			if(remove(eleIndx)) flag = true;
+			}
+		
+		}
+		return false;
+	}
+	//get method
+	public E get(int indx)
+	{
+	if(indx<0 || indx>=size())
+		if(indx <0 || indx >=size()){
+	throw new MyArrayIndexOutOfBoundException("Index "+indx+ "out of bounds for length "+size());	
+		
+	}
+	return arr[indx];
+		
+	}
+	
+	//contains
+	public boolean contains(E element)
+	{
+	for(int i = 0 ;i<size();i++)
+		{
+		if(arr[i].equals(element)) return true;
+		}
+		return false;
+		
+	}
+	
+	//containsAll
+	
+	public boolean containsAll(MyArrayList coll)
+	{
+	for(int i=0;i<coll.size();i++)
+		{
+		if(contains((E)coll.get(i)))
+			{
+			return true;
+			}
+		
+		}
+		return false;
+		
+	}
+	//set method
+	public E set(int indx, E element)
+	{
+	if(indx<0 || indx>=size())
+		if(indx <0 || indx >=size()){
+	throw new MyArrayIndexOutOfBoundException("Index "+indx+ "out of bounds for length "+size());	
+		
+	}
+	E temp = arr[indx];
+	arr[indx] = element;
+	return temp;
+		
+	}
+	
+	
+	
+	//clear
+	public void clear()
+	{
+	arr =(E[])new Object[arr.length];
+	indx =0;
+		
+	}
+}
+class  ArraysList_imp
+{
+	public static void main(String[] args) 
+	{
+	ArrayList list1 = new ArrayList();
+	 list1.add(10);
+	  list1.add(20);
+	   list1.add(30);
+	    list1.add(40);
+		 list1.add(50);
+		  list1.add(60);
+		  System.out.println(list1.size());
+		  
+		  MyArrayList<Integer>list2 = new MyArrayList();
+		  list2.add(10);
+		  list2.add(20);
+		  list2.add(30);
+		  list2.add(40);
+		  list2.add(50);
+		  list2.add(60);
+		  list2.add(70);
+		  list2.add(80);
+		  list2.add(90);
+		  
+		  System.out.println(list2);
+		  System.out.println(list2.size());
+		  System.out.println(list2.isEmpty());
+		  System.out.println(list2.add(10));
+		  System.out.println("___________________");
+		  
+		  MyArrayList list3 = new MyArrayList();
+		  list3.add(20);
+		  list3.add(70);
+		  list3.add(90);
+		  System.out.println(list3);
+		  System.out.println(list2);
+ System.out.println(list1.remove(3));
+ System.out.println(list1);
+
+		  
+	}
+}

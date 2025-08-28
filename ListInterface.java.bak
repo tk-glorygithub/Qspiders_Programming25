@@ -1,0 +1,26 @@
+import java.util.*;
+
+class ListInterface 
+{
+	public static void main(String[] args) 
+	{
+		List<String>fruits = new ArrayList<>();
+		fruits.add("Apple");
+		fruits.add("Mango");
+		fruits.add("guava");
+		fruits.add("Mango");
+		fruits.add("Orange");
+		
+		System.out.println("Fruits List" + fruits);
+		
+		// using index of
+		int firstMango= fruits.indexOf("Mango");
+		System.out.println(firstMango);
+		
+		int LastMango= fruits.lastindexOf("Mango");
+		System.out.println(LastMango);
+	
+		int notfound= fruits.indexOf("kiwi");
+		System.out.println(notfound);
+	}
+}

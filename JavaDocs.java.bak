@@ -1,0 +1,137 @@
+/**
+ * The {@code MyLinkedList} class provides a doubly-linked list implementation 
+ * of the {@link java.util.List} interface. 
+ * <p>
+ * It allows elements to be inserted or removed at both ends, 
+ * as well as at arbitrary positions. This makes it more flexible 
+ * than {@link java.util.ArrayList}, especially when frequent 
+ * insertions and deletions are required.
+ * </p>
+ *
+ * <h2>Features:</h2>
+ * <ul>
+ *   <li>Doubly-linked structure for fast insertions/deletions</li>
+ *   <li>Maintains order of insertion</li>
+ *   <li>Allows duplicate elements and null values</li>
+ * </ul>
+ *
+ * <p><b>Usage Example:</b></p>
+ * <pre>{@code
+ * MyLinkedList<String> list = new MyLinkedList<>();
+ * list.add("Apple");
+ * list.add("Banana");
+ * list.remove("Apple");
+ * }</pre>
+ *
+ * @author Trushna
+ * @version 1.0
+ * @since 2025
+ * @see java.util.ArrayList
+ * @see java.util.LinkedList
+ */
+public class MyLinkedList<E> {
+
+    /** Number of elements in the list */
+    private int size;
+
+    /** Reference to the first node */
+    private Node<E> head;
+
+    /** Reference to the last node */
+    private Node<E> tail;
+
+    /**
+     * Constructs an empty {@code MyLinkedList}.
+     */
+    public MyLinkedList() {
+        size = 0;
+        head = null;
+        tail = null;
+    }
+
+    /**
+     * Constructs a {@code MyLinkedList} containing the elements
+     * of the specified array, in the order they are returned by the array.
+     *
+     * @param elements the array whose elements are to be placed into this list
+     * @throws NullPointerException if the specified array is null
+     */
+    public MyLinkedList(E[] elements) {
+        for (E element : elements) {
+            add(element);
+        }
+    }
+
+    /**
+     * Appends the specified element to the end of this list.
+     *
+     * @param element element to be appended
+     * @return {@code true} if the element was added successfully
+     */
+    public boolean add(E element) {
+        Node<E> newNode = new Node<>(element);
+        if (head == null) {
+            head = tail = newNode;
+        } else {
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+        }
+        size++;
+        return true;
+    }
+
+    /**
+     * Removes the first occurrence of the specified element from this list.
+     *
+     * @param element element to be removed
+     * @return {@code true} if the element was successfully removed, 
+     *         {@code false} if not found
+     */
+    public boolean remove(E element) {
+        // Implementation logic here...
+        return false;
+    }
+
+    /**
+     * Returns the element at the specified position in this list.
+     *
+     * @param index index of the element to return
+     * @return the element at the specified position
+     * @throws IndexOutOfBoundsException if index is out of range
+     */
+    public E get(int index) {
+        // Implementation logic here...
+        return null;
+    }
+
+    /**
+     * Returns the number of elements in this list.
+     *
+     * @return the number of elements
+     */
+    public int size() {
+        return size;
+    }
+
+    /**
+     * A doubly-linked node used internally by {@code MyLinkedList}.
+     *
+     * @param <E> the type of element stored in the node
+     */
+    private static class Node<E> {
+        E data;
+        Node<E> next;
+        Node<E> prev;
+
+        /**
+         * Creates a new node with the given data.
+         *
+         * @param data the element stored in this node
+         */
+        Node(E data) {
+            this.data = data;
+        }
+    }
+}
+

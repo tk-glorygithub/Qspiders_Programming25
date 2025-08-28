@@ -1,0 +1,36 @@
+import java.util.*;
+
+
+class  ListMethods
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		List c = new ArrayList();
+		c.add(10);
+		c.add(20);
+		c.add(30);
+		c.add(40);
+		System.out.println(c);
+		
+			List d = new ArrayList();
+			d.add(50);
+			d.add(60);
+			d.add(70);
+			System.out.println(d);
+			
+			System.out.println(c.addAll(2,d));
+			System.out.println(c);
+			System.out.println(c.remove(3));
+			System.out.println(c);
+			System.out.println("____________");
+			System.out.println(c.get(1));
+			System.out.println("____________");
+			System.out.println(c.set(2,100));
+			System.out.println(c);
+			System.out.println("____________");
+			System.out.println(c.indexOf(40));
+			
+		
+	}
+}
